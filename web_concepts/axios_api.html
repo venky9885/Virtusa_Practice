@@ -1,0 +1,36 @@
+<html>
+
+<body>
+
+    <script src="https://unpkg.com/axios/dist/axios.min.js"></script>
+    <script>
+        function myFunction() {
+            const btn = document.getElementById("btn");
+            const setup = document.getElementById("setup");
+            const punchline = document.getElementById("punchline");
+            console.log("HEEEELL");
+            console.log(btn.textContent);
+
+
+
+            btn.onclick = () => {
+
+                console.log("INside");
+                axios.get('https://official-joke-api.appspot.com/random_joke/').then(function (response) {
+                    btn.textContent = "NeXt"
+                    setup.textContent = response.data.setup;
+                    punchline.textContent = response.data.punchline;
+                });
+            }
+        }
+    </script>
+    <h1>Helo Guys</h1>
+    <button id="btn" onclick="myFunction()">Yes!</button>
+    <div id="setup"></div>
+    <div id="punchline"></div>
+    <!-- <script src="./axios_api.js"></script> -->
+
+
+</body>
+
+</html>

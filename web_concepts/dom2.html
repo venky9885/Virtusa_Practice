@@ -1,0 +1,49 @@
+<!-- For access  in js using dom-->
+<!-- div.display
+.display
+#conytainer>.display
+div# > div.display -->
+
+<html>
+<script>
+    // Selection of Elemnets
+    const container = document.querySelector('#container');
+    alert(container.textContent)
+    console.dir(container.firstElementChild);
+    const controls = document.querySelector('.controls');
+    console.dir(controls.previousElementSibling);
+    //Adding elements
+
+    // const container = document.querySelector('#container');
+    function hell() {
+        const content = document.createElement('div');
+        content.classList.add('content');
+        content.textContent = "Newly added Text";
+        container.appendChild(content);
+    }
+
+    const bt = document.getElementById(btn)
+    bt.onclick = () => alert('Helo')
+
+    const bt = document.getElementById(btn1)
+    bt.addEventListener('click', () => {
+        alert("HeLLo");
+    })
+
+
+</script>
+
+<body>
+    <h1>Hello World</h1>
+    <div id="container">
+
+        <div class="display"></div>
+
+        <div class="controls"></div>
+        <button onclick="alert('HelloWorld')">Click me</button>
+        <button id="btn">Click me</button>
+        <button id="btn1">Click me</button>
+    </div>
+</body>
+
+</html>
