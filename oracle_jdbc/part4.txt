@@ -1,0 +1,68 @@
+//////////////////////////////////////////Joins
+Inner-Joins
+The INNER JOIN keyword selects records that have matching values in both tables.
+t1 = table1
+t2 = table2
+select * from t1 inner join t2 on t1.id = t2.id;
+
+course and data are the tables
+select course.id,data.name,data.age from data inner join course on data.id = course.id;
+
+Left-Joins
+The LEFT JOIN keyword returns all records from the left table (table1), and the matched records from the right table (table2). The result is NULL from the right side, if there is no match.
+
+select course.id,data.name,data.age from data left join course on data.id = course.id;
+
+Right-Joins
+The RIGHT JOIN keyword returns all records from the right table (table2), and the matched records from the left table (table1). The result is NULL from the left side, when there is no match.
+
+select course.id,data.name,data.age from data right join course on data.id = course.id;
+
+Full-Joins
+returns all records when there is a match in either left or right table records.
+
+select course.id,data.name,data.age from data full join course on data.id = course.id;
+------------------------------------------------------------------------
+//////////////////////////////////////////////////INDEX
+An index is a data structure that improves the speed of data retrieval operations on a database table at the cost of additional writes and storage space to maintain the index data structure.
+unique index
+
+oracle server automatically creates a unique index on the primary key or unique key when you define column in table.
+
+create unique index  name1  on data(age);
+
+
+non unique index
+
+created by user to speed up the query. 
+
+create index index_name on table_name (column_name);
+
+
+COMPOSITE index(Concatenated index)
+
+create index name2 on table_name (column_name1,column_name2);
+
+drop index name2;
+
+
+
+////////////////////////////////////////////CURSORS
+//Implicit cursor
+SET SERVEROUTPUT ON;
+DECLARE
+    total_rows NUMBER;
+BEGIN
+    UPDATE data
+    SET age = age+ 5;
+    IF sql%notfound THEN
+        dbms_output.put_line('No rows updated');
+    ELSIF sql%FOUND THEN
+
+        total_rows := sql%rowcount;
+        dbms_output.put_line('Total rows updated: ' || total_rows);
+    END IF;
+END;
+
+
+

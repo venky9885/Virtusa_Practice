@@ -1,0 +1,96 @@
+pl sql  proceduaral lanugage developed by oracle
+control structures 1
+if,case,goto,null
+
+//program
+SET SERVEROUTPUT ON
+DECLARE
+    a number(2) := 10;
+BEGIN
+    IF { a < 10 } THEN
+        DBMS_OUTPUT.PUT_LINE('a is 10');
+    END IF;
+END;
+//
+
+//CASE program
+SET SERVEROUTPUT ON
+DECLARE
+    a number(2) := 10;
+    grad char(1) := 'A';
+BEGIN
+    CASE grad
+        WHEN 'A' THEN
+            DBMS_OUTPUT.PUT_LINE('a is 10');
+        WHEN 'B' THEN
+            DBMS_OUTPUT.PUT_LINE('a is 10');
+        WHEN 'C' THEN
+            DBMS_OUTPUT.PUT_LINE('a is 10');
+        ELSE
+            DBMS_OUTPUT.PUT_LINE('a is 10');
+      //  WHEN { a < 10 } THEN
+      //     DBMS_OUTPUT.PUT_LINE('a is 10');
+      //WHEN { a > 10 } THEN
+        //              DBMS_OUTPUT.PUT_LINE('a is 10');
+        //ELSE
+         //   DBMS_OUTPUT.PUT_LINE('a is 10');
+    END CASE;
+END;
+
+//goto program
+SET SERVEROUTPUT ON
+BEGIN
+    GOTO second;
+
+    <<first>>
+    dbms_output.put_line('hello');
+    GOTO the_end;
+    <<second>>
+    dbms_output.put_line('welcome');
+    GOTO first;
+    <<the_end>>
+    dbms_output.put_line('bye');
+end;
+
+//null program
+/////Looping statements
+//loop,for loop ,while loop
+//LOOP program
+SET SERVEROUTPUT ON
+DECLARE
+    n number(2) := 0;
+BEGIN
+    LOOP
+        n := n + 1;
+        IF n > 3 THEN
+            EXIT;
+        END IF;
+        DBMS_OUTPUT.PUT_LINE('inside loop' || n);
+    END LOOP;
+    dbms_output.put_line('outside loop' || n);
+END;
+
+//Numeric for loop
+SET SERVEROUTPUT ON
+DECLARE
+    n number(2) := 0;
+BEGIN
+    FOR i IN 1..3 
+    LOOP
+        
+        DBMS_OUTPUT.PUT_LINE(i);
+    END LOOP;
+    
+END;
+//while loop
+SET SERVEROUTPUT ON
+DECLARE
+    n number(2) := 1;
+BEGIN
+    WHILE n <= 4
+    LOOP
+        DBMS_OUTPUT.PUT_LINE(n);
+        n := n + 1;
+    END LOOP;
+    
+END;

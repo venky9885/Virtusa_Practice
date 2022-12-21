@@ -1,0 +1,59 @@
+////////////sub programs
+
+SET SERVEROUTPUT ON
+CREATE PROCEDURE greeting
+AS
+BEGIN
+    DBMS_OUTPUT.PUT_LINE('Hello World');
+END;
+
+EXEC greeting;
+//////
+CREATE PROCEDURE data1
+AS
+select * FROM data
+go;
+
+/////
+between
+
+select marks from data where marks between 50 and 60;
+
+in
+
+select * from data where marks in (50,60,70);
+
+like
+
+select name from data where name like 'a%';
+
+order by
+
+select name,marks from data order by marks desc;
+
+///////////////////////////////////Retrive commands
+
+select,where,distinct,and,or,order by,group by
+
+select * from table1;
+ 
+select * from data where age>=25;
+
+select distinct name from data;(repeated also shown once)
+
+select * from data where age>=25 and age<=30;
+
+select * from data where age>=25 or age<=30;
+
+select * from data where age>=25 or age<=30 order by age asc;
+
+select * from data order by name ASC,marks DESC;
+
+select count(name),marks from data group by marks;
+
+///////////////////////////////synonyms
+
+create public synonym syn1 for data;
+
+select * from syn1;
+

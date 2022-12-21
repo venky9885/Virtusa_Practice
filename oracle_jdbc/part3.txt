@@ -1,0 +1,55 @@
+Dcl,Ddl,Dml,Dql(SQL Queries)
+
+DCL
+Grant,Revoke
+
+
+priveleges-select,insert,update,delete,create,drop,alter,references,trigger,index,all
+
+==Grant
+user=System
+table= data
+grant select,update on data to System;
+==Revoke
+revoke select,update on data from System;
+
+DDL(create,alter,drop,truncate,comment,rename)
+
+create table database_name(name varchar(20),age int(3),salary int(10))
+
+alter table database_name add(address varchar(20))
+
+alter table database_name rename to student
+
+truncate table student
+
+drop table student(completely removed)
+
+DQL
+
+select * from database_name;
+
+DML(Insert ,update ,delete)
+
+insert into database_name values('name',age,salary)
+
+update database_name set name='name' where age=27
+
+delete from database_name where age=27
+
+TCL(comit,rollback,savepoint)
+
+commit
+
+
+delete from database_name where age=27
+comit
+
+savepoint,rollback
+
+savepoint dta_svp;
+
+rollback dta_svp;
+
+
+

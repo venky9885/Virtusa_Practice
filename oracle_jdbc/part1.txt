@@ -1,0 +1,77 @@
+variabel_name datatype [not null value];
+
+
+constatnt_name CONSTANT datatype val;
+
+
+DECLARE
+sal_inc CONSTANT NUMBER(5) := 100;
+////////////IT Throws Error
+DECLARE
+sal_inc CONSTANT NUMBER(5) ;
+BEGIN 
+sal_inc := 100;
+dbms_output.put_line(sal_inc);
+END;
+/////////////////-----PLSQL REcords-----/////////////////////
+DECLARE
+TYPE emp_rec IS RECORD(
+emp_id NUMBER(6),
+emp_name VARCHAR2(20),
+emp_sal NUMBER(8,2),
+emp_dept VARCHAR2(20),
+emp_salary emp.salary%type;
+);
+///////////////cursors////////////////////////
+cursors are small area created to store pointing data
+cursors are used to fetch data from table
+multiple records holding at a time is called active set
+only proceess on record at a time
+1.Implicit cursor
+2.Explicit cursor
+ DML -Insert,update,delete
+ For DML Operations Implict cursor is used
+ %FOUND  RETURN TRUE IF CURSOR HAS RECORDS
+ %NOTFOUND
+ %ROWCOUNT RETURN NUMBER OF ROWS AFFECTED BY DML OPERATION(insert select update delete)
+
+ DECLARE var_row NUMBER(5);
+BEGIN
+   UPDATE employee
+   SET salary = salary + 1000;
+   IF SQL%NOTFOUND THEN
+        dbms_output.put_line('No rows updated');
+   ELSIF SQL%FOUND THEN
+        var_rows := SQL%ROWCOUNT;
+
+        dbms_output.put_line('Number of rows updated: ' || var_rows || ' rows');
+    END IF;
+END;
+--------------Explicit Cursor----------------
+DECLARE
+CURSOR emp_cur IS
+SELECT *
+FROM employee
+WHERE salary > 10000;
+
+OPEN cursor_name;
+
+FETCH cursor_name INTO record_name;
+
+CLOSE cursor_name;
+
+DECLARE
+    variables;
+    REcords;
+    create a cursor;
+BEGIN
+    open cursor_name;
+    LOOP
+        FETCH cursor_name INTO record_name;
+        EXIT WHEN cursor_name%NOTFOUND;
+        process the record;
+    END LOOP;
+    CLOSE cursor_name;
+END;
+
+

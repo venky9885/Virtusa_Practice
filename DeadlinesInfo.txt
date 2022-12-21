@@ -1,0 +1,8 @@
+19-28 -[9]- Java and Uml        ✔️
+28-3  -[6]- Oracle JDBC         ✔️
+3-10  -[7]- WebConcepts         ✔️(17,18,19)
+      -[7]- Angular
+10-16 -[6]- Maven and Spring    ✔️
+16-22 -[6]- UnitTesting         ✔️
+
+
