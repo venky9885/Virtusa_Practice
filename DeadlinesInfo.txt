@@ -1,8 +1,10 @@
-19-28 -[9]- Java and Uml        ✔️
-28-3  -[6]- Oracle JDBC         ✔️
+day3 21-12-2022
+
+19-28 -[9]- Java and Uml        ✔️(22,23)
+28-3  -[6]- Oracle JDBC         ✔️(20,21)
 3-10  -[7]- WebConcepts         ✔️(17,18,19)
-      -[7]- Angular
-10-16 -[6]- Maven and Spring    ✔️
-16-22 -[6]- UnitTesting         ✔️
+      -[7]- Angular             ✔️(       )
+10-16 -[6]- Maven and Spring    ✔️(       )
+16-22 -[6]- UnitTesting         ✔️(       )
 
 
