@@ -26,3 +26,7 @@ public class InheritanceTwo {
 
     }
 }
+
+// Java Doesnt support multiple inheritance below is example
+// class Animal extends Dog, Cat{
+// }
