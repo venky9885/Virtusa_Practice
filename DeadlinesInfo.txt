@@ -6,5 +6,3 @@ day4 23-12-2022
       -[7]- Angular             ✔️(       )
 10-16 -[6]- Maven and Spring    ✔️(       )
 16-22 -[6]- UnitTesting         ✔️(       )
-
-
