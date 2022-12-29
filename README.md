@@ -11,15 +11,16 @@ This Repo contains code that is explained in Virtusa Examly Portal.
 Refer this repo codes.we have completely covered all codes .Even though you cant able to watch videos .Practice the codes in this repo.
 
 Fully written Code
-
+<br>
+✅ UML and OOps
+<br>
 ✅ Web concepts
 <br>
 ✅ Oracle JDBC
 <br>
 
 Upcoming....
-<br>
-⬜ UML and OOps
+
 <br>
 ⬜ Maven And Spring
 <br>
