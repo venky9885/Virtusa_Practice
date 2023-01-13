@@ -1,0 +1,50 @@
+
+----------------------//connectione establisment----------------------
+import java.sql.*;
+
+public class ConnectionClass{
+    public static void main(String[] args) {
+        try{
+            Class.forName("com.mysql.jdbc.Driver");
+            Connection con = DriverManager.getConnection("jdbc:mysql://localhost:3306/","root","root");
+            if(con!=null){
+                System.out.println("Connection Established");
+            }
+            else{
+                System.out.println("Connection Failed");
+            }
+            
+        }catch(Exception e){
+            System.out.println(e);
+        }
+    }
+}
+-------------------execute query-------------------
+import java.sql.*;
+
+public class ConnectionClass{
+    public static void main(String[] args) {
+        try{
+            Class.forName("com.mysql.jdbc.Driver");
+            Connection con = DriverManager.getConnection("jdbc:mysql://localhost:3306/","root","root");
+            Statement st = con.createStatement();
+            //executing select
+            ResultSet rs = st.executeQuery("select * from student");
+
+            while(rs.next()){
+                System.out.println(rs.getInt(1)+" "+rs.getString(2)+" "+rs.getString(3));
+            }
+            //executing insert
+            PreparedStatement ps = con.prepareStatement("insert into student values(?,?,?)");
+
+            ps.setInt(1, 4);
+            ps.setString(2, "Rahul");
+            ps.setString(3, "B.Tech");
+
+            int i = ps.executeUpdate();
+            
+        }catch(Exception e){
+            System.out.println(e);
+        }
+    }
+}
